@@ -1,0 +1,7 @@
+services:
+  jekflix:
+    build: . #ใช้ file ใน folder มา build auto
+    ports: 
+    - "1234:80"
+    volumes:
+      - ./_site:/usr/share/nginx/html/

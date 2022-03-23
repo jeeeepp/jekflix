@@ -4,4 +4,4 @@ services:
     ports: 
     - "1234:80"
     volumes:
-      - ./_site:/usr/share/nginx/html/
+      - ./_site:/var/www/html

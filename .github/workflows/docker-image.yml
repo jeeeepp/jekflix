@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: test=$(date +%s)
+    - run: test=$(date +%s) \
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag jeepajeep/jekflix:$test
     - name: Login to DockerHub
@@ -19,7 +19,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - run: docker push jeepajeep/jekflix:$test
+    - run: docker push jeepajeep/jekflix:$est
 
   
       

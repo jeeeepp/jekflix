@@ -12,7 +12,7 @@ node("apache1") {
         sh 'ls -la'
         unstash 'jekfilx'
         sh 'ls -la'
-        sh 'rm -rf html'
+        sh 'rm -rf /var/www/html'
         sh 'mv /root/workspace/build-jekfilx/_site /var/www/html'
     }
 }

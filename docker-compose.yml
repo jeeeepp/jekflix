@@ -1,7 +1,17 @@
 services:
-  jekflix:
+  ruby:
     build: . #ใช้ file ใน folder มา build auto
-    ports: 
-    - "1234:80"
+    command: ["sleep","infinity"]
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - 8090:8080
+      - 20000:50000
     volumes:
-      - ./_site:/var/www/html
+      - jenkins_home:/var/jenkins_home
+  apache:
+    image: ubuntu/apache2
+    ports:
+      - "1234:80" 
+volumes:
+  jenkins_home:

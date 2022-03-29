@@ -1,0 +1,7 @@
+node("apache1") {
+    stage("build") {
+        sh 'rm index.html'
+        sh 'jekyll build'
+        sh  'pwd'
+    }
+}
